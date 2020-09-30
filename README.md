@@ -1,6 +1,6 @@
 # lab-02-Guess-a-Number
 
-##The Plan
+## The Plan
 
 STATE:
 - number of guesses

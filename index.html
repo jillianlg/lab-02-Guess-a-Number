@@ -21,13 +21,16 @@
     <main>
         <section class="main-section">
             <h2>Guess the magic number:</h2>
-            <div>Senior Splendini is thinking of a number between 1-20. You have 4 chances to guess.</div>
+            <h3>Senior Splendini is thinking of a number between 1-20. You have 4 chances to guess.</h3>
             <input id='user-input' type='number'>
             <button id='guess-button'>Guess</button>
             <div>Number of guesses remaining: <span id='guesses-span'>4</span></div>
-            <div>Your guess was <span id='high-low-span'></span></div>
-            <!-- <div>Results:<span id='results-span'></span></div> -->
-            <img src="https://www.iconspng.com/images/magic-top-hat/magic-top-hat.jpg" alt="magic top hat">
+            <span id='high-low-span'></span>
+            <span id='results-span'></span>
+            <div>You have won: <span id='win-span'> 0</span></div>
+            <div>You have lost:<span id='lose-span'>0</span></div>
+            <img class='magic-img' src="https://www.iconspng.com/images/magic-top-hat/magic-top-hat.jpg" alt="magic top hat">
+            <button id='reset-button'>Reset</button>
         </section>
     </main>
     <footer>

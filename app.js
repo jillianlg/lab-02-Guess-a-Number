@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { compareNumber } from '../utils.js';
+import { compareNumber, randomNum } from './utils.js';
 
 const guessesRemain = document.getElementById('guesses-span');
 const guessHighLow = document.getElementById('high-low-span');
@@ -9,8 +9,8 @@ const resetButton = document.getElementById('reset-button');
 const winTotal = document.getElementById('win-span');
 const loseTotal = document.getElementById('lose-span');
 const input = document.getElementById('user-input');
-let randomNum = Math.floor(Math.random() * 20);
-console.log(randomNum);
+// let randomNum = Math.floor(Math.random() * 20);
+// console.log(randomNum);
 
 // initialize state
 let guesses = 4;
@@ -55,7 +55,7 @@ guessButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-    randomNum = Math.floor(Math.random() * 20);
+    randomNum;
     guesses = 4;
     guessesRemain.textContent = guesses;
     guessButton.disabled = false;

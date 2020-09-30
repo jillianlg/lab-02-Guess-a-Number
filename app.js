@@ -5,10 +5,11 @@ const guessesRemain = document.getElementById('guesses-span');
 const guessHighLow = document.getElementById('high-low-span');
 const guessButton = document.getElementById('guess-button');
 const results = document.getElementById('results-span');
+const resetButton = document.getElementById('reset-button');
 const winTotal = document.getElementById('win-span');
 const loseTotal = document.getElementById('lose-span');
 const input = document.getElementById('user-input');
-const randomNum = Math.floor(Math.random() * 15);
+let randomNum = Math.floor(Math.random() * 20);
 console.log(randomNum);
 
 // initialize state
@@ -22,7 +23,7 @@ guessButton.addEventListener('click', () => {
 
     guessesRemain.textContent = guesses;
 
-    const userInput = Number(input.value);
+    let userInput = Number(input.value);
 
     const magicNumber = compareNumber(userInput, randomNum);
 
@@ -41,13 +42,21 @@ guessButton.addEventListener('click', () => {
         winTotal.textContent = win;
         guesses = 4;
         guessesRemain.textContent = guesses;
+        guessButton.disabled = true;
     }
     if (guesses === 0){
         results.textContent = 'You ran out of guesses.';
-        // guessButton.disabled = true;
         lose++;
         loseTotal.textContent = lose;
         guessButton.disabled = true;
     } 
+
+    input.value = '';
 });
 
+resetButton.addEventListener('click', () => {
+    randomNum = Math.floor(Math.random() * 20);
+    guesses = 4;
+    guessesRemain.textContent = guesses;
+    guessButton.disabled = false;
+});
